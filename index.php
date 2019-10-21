@@ -1,11 +1,6 @@
 <?php 
 	// Funciones
 
-	// Para debug existen dos funciones: 
-	error_reporting( E_ALL ); // Error reporting (repórtame todos los errores)
-	ini_set('display_errors', 1); // Cambia la configuración en tiempo de ejecución en php, ('nombre de configuración a cambiar', 1); 1 = true;
-
-
 	function get_post_1_titulo() {
 		$post_1_titulo = 'Lorem ipsum dolor sit amet';
 		return $post_1_titulo;
@@ -26,30 +21,62 @@
 		return $post_2_contenido;
 	}
 
+	// Tipos de datos
 
-	// Tipo de errores 
-	// 1.- Error fatal (Cuando se llama a una función que NO existe, undefined)
-		// my_function();
+	// Integers
+	$positivo = 10;
+	$cero = 0;
+	$negativo = -10;
 
-	// 2.- Warning (A partir de php7 no existen warnings)
-	// 4.- Notice (Variable que NO existe, no es un error grave)
-		echo $my_var;
-
-	// 3.- Syntaxis Error (Sale a nivel global, error 500) --> C. LOCKS, php_error.php
-
+	// Punto flotante (reales) floats, doubles
+	$numero = 1.234;
+	$exponente_1 = 0.1234e2; // 0.1234 * 10 ^ 2
+	$exponente_2 = 1234E-3; // 1234 * 10^ - 3
 
 
-	// Dump 
-		$my_var = 'Ignacio';
-		var_dump( $my_var );
+	// Cadenas: Strings
+	$nombre = 'Ignacio'; // Comillas Simples
+	$apellido = "Cruz"; // Comillas Dobless
 
-		$my_lista = [ 'uno', 'dos' ];
-		var_dump( $my_lista );
 
-	// Instalar XDEBUG
+	// Array
+
+	// Notación antigua
+	$alimento = array( 'pera', 'manzana', 'carne');
+	$colores = [ 'azul', 'verde', 'rojo']; 
+
+	// Acceder arrays
+	var_dump( $colores[0] );
+	var_dump( $colores[1] );
+
+
+	// Array Asociativo
+	$edades	= ['Pedro' => 22, 'Ana' => 15, 'Susana' => 38 ];
+	var_dump( $edades['Pedro']);
+	var_dump( $edades['Susana']);
+
+	// Añadir elementos a arrays
+	$colores[] = 'morado';
+	$edades['Juan'] = 45;
+	
+	var_dump($edades);
+	var_dump($colores);
+
+
+	// Valores "false"
+	$cero = 0;
+	$cadena_vacia = '';
+	$nulo = null;
+	$array_vacio = [];
+
+	// Valores "true"
+	// (bool) => Convierte a booleno
+	var_dump( (bool) $positivo );
+	var_dump( (bool) $negativo );
+	var_dump( (bool) $edades );
+	var_dump( (bool) $nombre );
+
 ?>
-<!-- Debug -->
-<h1><?php echo $my_var;?></h1>
 
 <!DOCTYPE html>
 <html lang="en">
