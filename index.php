@@ -1,6 +1,11 @@
 <?php 
-
 	// Funciones
+
+	// Para debug existen dos funciones: 
+	error_reporting( E_ALL ); // Error reporting (repórtame todos los errores)
+	ini_set('display_errors', 1); // Cambia la configuración en tiempo de ejecución en php, ('nombre de configuración a cambiar', 1); 1 = true;
+
+
 	function get_post_1_titulo() {
 		$post_1_titulo = 'Lorem ipsum dolor sit amet';
 		return $post_1_titulo;
@@ -22,25 +27,29 @@
 	}
 
 
+	// Tipo de errores 
+	// 1.- Error fatal (Cuando se llama a una función que NO existe, undefined)
+		// my_function();
 
-	// Ámbito de variables (Scope)
-	function prueba() {
-		$saludo = 'Hola, ¿Qué tal?';
-		echo $saludo;
-	}
+	// 2.- Warning (A partir de php7 no existen warnings)
+	// 4.- Notice (Variable que NO existe, no es un error grave)
+		echo $my_var;
 
-	// Global
-	$otro_saludo = 'HOLA!';
-	function otra_prueba() {
-		global $otro_saludo; // Llamamos variable global
-		echo $otro_saludo;	// Estamos llamando a la variable, pero como es global, no se imprime
-	}
-	
+	// 3.- Syntaxis Error (Sale a nivel global, error 500) --> C. LOCKS, php_error.php
+
+
+
+	// Dump 
+		$my_var = 'Ignacio';
+		var_dump( $my_var );
+
+		$my_lista = [ 'uno', 'dos' ];
+		var_dump( $my_lista );
+
+	// Instalar XDEBUG
 ?>
-
-
-<h1><?php prueba(); ?></h1>
-<h1><?php otra_prueba(); ?></h1>
+<!-- Debug -->
+<h1><?php echo $my_var;?></h1>
 
 <!DOCTYPE html>
 <html lang="en">
