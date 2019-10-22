@@ -22,29 +22,49 @@
 		],
 	];
 
-	// Funciones
+	echo '<hr/>';
 
-	function get_post_1_titulo() {
-		$post_1_titulo = 'Lorem ipsum dolor sit amet';
-		return $post_1_titulo;
-	}
+	// While
+	$contador = 1;
 
-	function get_post_1_contenido() {
-		$post_1_contenido = 'Mauris lobortis, turpis sit amet pulvinar henderit, elit lingula accusman lingula, ut';
-		return $post_1_contenido;
-	}
-
-	function get_post_2_titulo() {
-		$post_2_titulo = 'Mauris lobortis, turpis sit amet pulvinar henderit';
-		return $post_2_titulo;
-	}
-
-	function get_post_2_contenido() {
-		$post_2_contenido = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis in odit aperiam eos placeat ullam vero veniam iste aspernatur mollitia rem excepturi, minima consectetur ut sunt maxime natus, enim beatae.Adipisci ea, ex numquam dolorum blanditiis quis iure magni quasi voluptate expedita veritatis quos laborum vel molestias reprehenderit cupiditate obcaecati aliquam eos eum dignissimos consequatur! Odit accusantium suscipit quod ratione.';
-		return $post_2_contenido;
+	// Ejecutalo Mientras contador sea menor o igual a 10
+	while ($contador <= 10) {
+		echo $contador; 
+		echo '<br/>';
+		$contador = $contador + 1;  // Al $contador suma 1 hasta que sea igual o menor a diez.
 	}
 
 
+	// Do While
+	$contador = 10;
+	do {
+		echo "Mi contador es $contador";
+		echo '<br/>';
+		$contador = $contador + 1;
+	} while ( $contador <= 20 );
+
+	// For
+	$longitud_posts = count( $all_posts ); // count saca el no. de elementos que tiene un array
+		for( $i = 0; $i < $longitud_posts; $i++) {
+		echo $all_posts [ $i ]['title'];
+		echo '<br/>';
+	}
+
+	// Foreach
+	foreach( $all_posts as $post ) { // Para cada uno de los posts que hay en este array, guardalo en uno de los posts
+		echo $post['title']; // Para cada variable de $post saca en pantalla el título de post
+		echo '<br/>';
+	}
+
+	foreach( $all_posts as $post ) { 
+		echo '<strong>POST</strong>';
+		echo '<br/>';
+		
+		foreach( $post as $key => $value ) { // Para cada campo dentro de $post ($post es array y lo podemos recorrer) y de título contenido, guardáme la $key, 
+			echo "- La clave $key tiene valor $value";		
+			echo '<br/>';	
+		}
+ 	}
 ?>
 
 <!DOCTYPE html>
