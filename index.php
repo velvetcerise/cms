@@ -4,6 +4,14 @@
 	error_reporting( E_ALL );
 	ini_set( 'display_errors', 1 );
 
+
+	// Función para traducir fecha
+	setlocale( LC_TIME, 'es', 'spa', 'es_ES' ); // LC_TIME para traducción de fechas, segundo parámetro => Idioma, 2 param Es según ISO 639.2 && sistema iOS
+
+	// Zona horaria servidor 
+	date_default_timezone_set('Australia/Sidney');
+
+	
 	// Array con array disociativo
 	$all_posts = [
 		[
@@ -55,7 +63,17 @@
 					<?php echo $post['content'];?>
 				</div>
 
-				<footer></footer>
+				<footer>
+					<span class="post-date">
+						Publicada en:
+						<!-- <?php echo date( 'Y, m-d' ) ?> Fecha de hoy -->
+						<!-- <?php echo date( 'Y, m-d H:i:s' ) ?> Fecha de hoy con hora, minutos y segundos  -->
+
+						<?php $timestamp = strtotime ( $post['published_on'] ); ?>
+						<!-- <?php echo date('d M Y', $timestamp ); ?> -->
+						<?php echo strftime( '%d %b %Y', $timestamp ); ?>
+					</span>
+				</footer>
 			</article>
 		<?php endforeach; ?> <!-- Aquí acaba foreach -->
 	</div>
