@@ -9,7 +9,7 @@
 	setlocale( LC_TIME, 'es', 'spa', 'es_ES' ); // LC_TIME para traducción de fechas, segundo parámetro => Idioma, 2 param Es según ISO 639.2 && sistema iOS
 
 	// Zona horaria servidor 
-	date_default_timezone_set('Australia/Sidney');
+	date_default_timezone_set('America/Los_Angeles');
 
 	
 	// Array con array disociativo
@@ -29,6 +29,106 @@
 			'published_on' => '2018-01-18 10:15:00',
 		],
 	];
+
+
+	// Operadores
+
+	// Básicos
+
+		//Aritméticos
+		$x = 10;
+		$y = 15;
+
+		var_dump($x + $y);
+		var_dump($x - $y);
+		var_dump($x * $y);
+		var_dump($x / $y);
+
+		// Asignación 
+		$z = 50;
+		$x = $z;
+
+		var_dump( $x );
+
+		$x += $y; // Lo mismo que $x = $x + $y
+		var_dump( $x );
+
+		$x -= $y; // Lo mismo que $x = $x - $y
+		var_dump( $x );
+
+		$x *= $y; // Lo mismo que $x = $x * $y
+		var_dump( $x );
+
+		$x /= $y; // Lo mismo que $x = $x / $y
+		var_dump( $x );
+
+	// Incremento y Decremento
+		$x++; // Lo mismo que $x = $x + 1;
+		var_dump( $x );
+
+		$x--; // Lo mismo que $x = $x - 1;
+		var_dump( $x );
+
+	// De comparación 
+		$x = 10;
+		$y = '10';
+	
+		var_dump( '$x == $y' );  // es igual a  --> valor bool
+		var_dump( $x == $y );	// es igual a -> valor bool
+		var_dump( '$x === $y' );  // es exactamente igual a  --> valor bool
+		var_dump( $x === $y );  // es exactamente igual a  --> valor bool
+
+		var_dump( '$x < $y' );
+		var_dump( $x < $y );
+		var_dump( '$x > $y' );
+		var_dump( $x > $y );
+		var_dump( '$x <= $y' );
+		var_dump( $x <= $y );
+		var_dump( '$x >= $y' );
+		var_dump( $x >= $y );
+		var_dump( '$x != $y' );
+		var_dump( $x != $y );
+		var_dump( '$x !== $y' );
+		var_dump( $x !== $y );
+
+	// De cadena
+		$cadena1 = 'Hola';
+		$cadena2 = ' Mundo';
+
+		var_dump( $cadena1 . $cadena2 );
+
+		$cadena2 .= $cadena1;
+		var_dump( $cadena2 ); // MundoHola
+
+	// Lógicos
+		$x = true;
+		$y = false;
+
+		// && (AND)
+		var_dump( 'x && y' );
+		var_dump( $x && $y );
+
+		// || (AND)
+		var_dump( 'x || y' );
+		var_dump( $x || $y );
+
+		// ! (NOT) Devuelve valor contrario
+		var_dump( '! $x' );
+		var_dump( ! $x );
+
+		var_dump( '! $y' );
+		var_dump( ! $y );
+
+		// Más ejemplos
+		$x = true;
+		$y = 1; // 1 = true para php
+
+		var_dump( '$x && $y' );
+		var_dump( $x && $y );
+
+		var_dump( '$x || $y' );
+		var_dump( $x || $y );
+		
 ?>
 
 <!DOCTYPE html>
