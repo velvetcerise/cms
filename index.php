@@ -45,8 +45,7 @@
 
 <div id="content" >
 	<div class="posts">
-		<?php foreach ( $all_posts as $post ) {
-			?>
+		<?php foreach ( $all_posts as $post ) : ?> <!-- Aquí empieza foreach --> 
 			<article class="post">
 				<header>
 					<h2 class="post-title"><?php echo $post['title'];?></h2>
@@ -58,9 +57,7 @@
 
 				<footer></footer>
 			</article>
-			<?php
-		} ?>
-
+		<?php endforeach; ?> <!-- Aquí acaba foreach -->
 	</div>
 </div>
 
